@@ -13,12 +13,12 @@ export MSYS_NO_PATHCONV=1
 docker-compose -f docker-compose.yml down
 
 # docker-compose -> 컨테이터수행 및 net_basic 네트워크 생성
-docker-compose -f docker-compose.yml up -d ca.org1.example.com ca.org2.example.com orderer.example.com peer0.org1.example.com couchdb1 peer0.org2.example.com couchdb2 cli
+docker-compose -f docker-compose.yml up -d ca.org1.example.com ca.org2.example.com orderer.example.com peer0.org1.example.com  peer0.org2.example.com cli
 docker ps -a
 docker network ls
 # wait for Hyperledger Fabric to start
 # incase of errors when running later commands, issue export FABRIC_START_TIMEOUT=<larger number>
-export FABRIC_START_TIMEOUT=10
+export FABRIC_START_TIMEOUT=5
 #echo ${FABRIC_START_TIMEOUT}
 sleep ${FABRIC_START_TIMEOUT}
 
@@ -37,5 +37,6 @@ docker exec -e "CORE_PEER_LOCALMSPID=Org2MSP" -e "CORE_PEER_MSPCONFIGPATH=/etc/h
 sleep 3
 
 # anchor ORG1 mychannel update
-
+docker exec -e "CORE_PEER_LOCALMSPID=Org1MSP" -e "CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/users/Admin@org1.example.com/msp" peer0.org1.example.com peer channel update -f /etc/hyperledger/configtx/Org1MSPanchors.tx -c mychannel -o orderer.example.com:7050
 # anchor ORG2 mychannel update
+docker exec -e "CORE_PEER_LOCALMSPID=Org2MSP" -e "CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/users/Admin@org2.example.com/msp" peer0.org2.example.com peer channel update -f /etc/hyperledger/configtx/Org2MSPanchors.tx -c mychannel -o orderer.example.com:7050

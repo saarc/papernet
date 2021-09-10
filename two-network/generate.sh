@@ -10,10 +10,10 @@ CHANNEL_NAME=mychannel #-> papernet
 
 # remove previous crypto material and config transactions
 rm -fr config/*
-rm -fr crypto-config/*
+# rm -fr crypto-config/*
 
 # generate crypto material
-cryptogen generate --config=./crypto-config.yaml
+# cryptogen generate --config=./crypto-config.yaml
 if [ "$?" -ne 0 ]; then
   echo "Failed to generate crypto material..."
   exit 1
