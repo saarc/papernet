@@ -1,0 +1,44 @@
+[
+    {
+        "TxId": "315d0cd9932e969772e1d250f2997fe65cc28419dd704112a533a84db107660c",
+        "Value": {
+            "issuer": "MagnetoCorp",
+            "pid": "00021",
+            "owner": "MagnetoCorp",
+            "idate": "2021-9-8",
+            "mdate": "2021-12-31",
+            "fvalue": "1000000",
+            "state": "issued"
+        },
+        "Timestamp": "2021-09-13 13:21:16.099815926 +0000 UTC",
+        "IsDelete": "false"
+    },
+    {
+        "TxId": "0eb3f892af96a99e1ca67889c4de9c970904b10b499779be1792bdb09196df97",
+        "Value": {
+            "issuer": "MagnetoCorp",
+            "pid": "00021",
+            "owner": "DigiBank",
+            "idate": "2021-9-8",
+            "mdate": "2021-12-31",
+            "fvalue": "1000000",
+            "state": "trading"
+        },
+        "Timestamp": "2021-09-13 13:21:29.78095973 +0000 UTC",
+        "IsDelete": "false"
+    },
+    {
+        "TxId": "d1abfa78328c48c9942c6c54cd06f4d772fa7b0e00b6fc20b8ed3837c586768e",
+        "Value": {
+            "issuer": "MagnetoCorp",
+            "pid": "00021",
+            "owner": "MagnetoCorp",
+            "idate": "2021-9-8",
+            "mdate": "2021-12-31",
+            "fvalue": "1000000",
+            "state": "redeemed"
+        },
+        "Timestamp": "2021-09-13 13:21:32.969433027 +0000 UTC",
+        "IsDelete": "false"
+    }
+]
