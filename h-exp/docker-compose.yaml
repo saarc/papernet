@@ -48,7 +48,7 @@ services:
     volumes:
       - ./config.json:/opt/explorer/app/platform/fabric/config.json
       - ./connection-profile:/opt/explorer/app/platform/fabric/connection-profile
-      - ./../two-network/crypto-config/:/tmp/crypto
+      - ../two-network/crypto-config/:/tmp/crypto
       - walletstore:/opt/explorer/wallet
     ports:
       - 8080:8080
