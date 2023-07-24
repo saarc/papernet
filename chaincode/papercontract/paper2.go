@@ -58,7 +58,7 @@ func (s *SmartContract) Read(ctx contractapi.TransactionContextInterface, pid st
 	return paper, nil
 }
 
-func (s *SmartContract) buy(ctx contractapi.TransactionContextInterface, pid string, newOwner int) error {
+func (s *SmartContract) Buy(ctx contractapi.TransactionContextInterface, pid string, newOwner int) error {
 	paper, err := s.Read(ctx, pid)
 
 	if err != nil {
@@ -77,7 +77,7 @@ func (s *SmartContract) buy(ctx contractapi.TransactionContextInterface, pid str
 	return ctx.GetStub().PutState(pid, paper)
 }
 
-func (s *SmartContract) redeem(ctx contractapi.TransactionContextInterface, pid string) error {
+func (s *SmartContract) Redeem(ctx contractapi.TransactionContextInterface, pid string) error {
 	paper, err := s.Read(ctx, pid)
 
 	if err != nil {
