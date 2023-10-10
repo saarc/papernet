@@ -35,6 +35,7 @@ func (s *SmartContract) Issue(ctx contractapi.TransactionContextInterface, issue
 		fvalue : coupon,
 		State : "issued",
 	}
+	// (TODO) 검증 중복id 
 
 	paperAsBytes, _ := json.Marshal(paper)
 
