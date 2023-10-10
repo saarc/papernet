@@ -49,8 +49,8 @@ func (s *SmartContract) Read(ctx contractapi.TransactionContextInterface, pid st
 		return nil, fmt.Errorf("Failed to read from world state. %s", err.Error())
 	}
 
-	if couponAsBytes == nil {
-		return nil, fmt.Errorf("%s does not exist", phone)
+	if paperAsBytes == nil {
+		return nil, fmt.Errorf("%s does not exist", pid)
 	}
 
 	paper := new(Paper)
@@ -66,7 +66,7 @@ func (s *SmartContract) Buy(ctx contractapi.TransactionContextInterface, pid str
 		return err
 	}
 
-	// 검증
+	// 검증 ( issued or trading )
 	if paper.State == "redeemed" {
 		return fmt.Errorf("This paper was redeemed")
 	}
